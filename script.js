@@ -53,7 +53,7 @@ recognition.onend = () => {
 
 recognition.onerror = (event) => {
   console.error(`Error occurred in recognition: ${event.error}`);
-  if (event.error === "no-speech") {
+  if (event.error === "no-speech" || "aborted") {
     stopAndRestartRecognition();
   }
 };
